@@ -4,6 +4,7 @@ import { getCustomRepository } from 'typeorm';
 import AppError from '../errors/AppError';
 
 import Appointment from '../models/Appointment';
+// ta escrito errado 
 import AppointmensRepository from '../repositories/AppointmentsRepository';
 
 interface Request {
