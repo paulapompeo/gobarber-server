@@ -25,9 +25,11 @@
       "prettier/prettier": "error",
       "class-methods-use-this": "off",
       "@typescript-eslint/camelcase": "off",
+      "no-useless-constructor": "off",
       "@typescript-eslint/no_unused-vars": ["error", {
         "argsIgnorePattern": "_"
       }],
+      "@typescript/interface-name-prefix": ["error", { "prefixWithI": "always" }], 
       "import/extensions": [
         "error",
         "ignorePackages",
