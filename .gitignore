@@ -4,10 +4,11 @@ node_modules/
 build/
 temp/
 
+# Ignore test-related files
+
+/coverage
+
 tpm/*
 !tmp/.gitkeep
 
 
-# Ignore test-related files
-/coverage.data
-/coverage/
