@@ -8,5 +8,5 @@ temp/
 tpm/*
 !tmp/.gitkeep
 
-/coverage.data
-/coverage/
+coverage.data
+coverage/
