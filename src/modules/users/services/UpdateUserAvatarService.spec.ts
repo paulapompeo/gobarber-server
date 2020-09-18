@@ -25,7 +25,7 @@ describe('UpdateUserAvatar', () => {
     expect(user.avatar).toBe('avatar.jpg');
   });
 
-  it('should be able to update avatar without authentication', async () => {
+  it('should not be able to update avatar from a non existing user', async () => {
     const fakeUsersRespository = new FakeUsersRespository();
     const fakeStorageProvider = new FakeStorageProvider();
 
@@ -44,12 +44,15 @@ describe('UpdateUserAvatar', () => {
     const fakeUsersRespository = new FakeUsersRespository();
     const fakeStorageProvider = new FakeStorageProvider();
 
+    //SPY - espionar se a funcao delete file foi executada
+    const deleteFile = jest.spyOn(fakeStorageProvider, 'deleteFile');
+
     const updateUserAvatar = new UpdateUserAvatarService(fakeUsersRespository,fakeStorageProvider);
 
     const user = await fakeUsersRespository.create({
       name: 'John Doe',
       email: 'johndoe@example.com',
-      password: '1234567'
+      password: '1234567',
     });
     
     await updateUserAvatar.execute({
@@ -57,6 +60,15 @@ describe('UpdateUserAvatar', () => {
       avatarFilename: 'avatar.jpg',
     });
 
-    expect(user.avatar).toBe('avatar.jpg');
+    //SPY - espionar se a funcao delete file foi executada
+
+    await updateUserAvatar.execute({
+      user_id: user.id,
+      avatarFilename: 'avatar2.jpg',
+    });
+
+    expect(deleteFile).toHaveBeenCalledWith('avatar.jpg');
+
+    expect(user.avatar).toBe('avatar2.jpg');
   });
 });
