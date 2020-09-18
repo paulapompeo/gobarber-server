@@ -6,3 +6,5 @@ temp/
 
 tpm/*
 !tmp/.gitkeep
+
+coverage
