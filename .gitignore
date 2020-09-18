@@ -1,10 +1,11 @@
 .idea/
 .vscode/
 node_modules/
+.coverage/
 build/
 temp/
 
 tpm/*
 !tmp/.gitkeep
 
-coverage/
+.coverage/
