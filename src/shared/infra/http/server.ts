@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 //para mostrar a imagem (forma estatica)
-app.use('/files', express.static(uploadConfig.directory));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 // tratativa de erros tem que ser depois das rotas
