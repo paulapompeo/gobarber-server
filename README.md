@@ -67,4 +67,3 @@
 - O usuário não podem agendar em um horário já ocupado;
 - O usuário não pode agendar em um horário que já passou;
 - O usuário não pode agendar horarios consigo;
-- 
