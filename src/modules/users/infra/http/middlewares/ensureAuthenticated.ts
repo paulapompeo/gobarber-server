@@ -5,7 +5,7 @@ import authConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
 
 // criado para que tudo o que executar apos esse arquivo, tratar apenas do usuario em questao
-interface TokenPayload {
+interface ITokenPayload {
   iat: number; 
   exp: number;
   sub: string;
@@ -31,7 +31,7 @@ export default function ensureAuthenticated(
     try {
       const decoded = verify(token, authConfig.jwt.secret);
 
-      const { sub } = decoded as TokenPayload;
+      const { sub } = decoded as ITokenPayload;
 
       // tratar apenas do usuário em questao
       request.user = {
