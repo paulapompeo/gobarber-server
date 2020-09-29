@@ -67,3 +67,14 @@
 - O usuário não podem agendar em um horário já ocupado;
 - O usuário não pode agendar em um horário que já passou;
 - O usuário não pode agendar horarios consigo;
+
+
+# Bancos a serem utilizados na aplicação: 
+
+- Postgress
+ex: Aluno, Video, Curso, Modulo
+- MongoDB -> muitos dados e pouco relacionamento entre esses dados
+ex: progresso do aluno -> 10% video x
+ex: notificações
+- Redis -> informações que são temporárias
+ex: cache, filas
