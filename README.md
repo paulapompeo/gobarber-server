@@ -78,3 +78,16 @@ ex: progresso do aluno -> 10% video x
 ex: notificações
 - Redis -> informações que são temporárias
 ex: cache, filas
+
+
+
+- Amazon S3 = CDN (Content Delivery Network) 
+Utilizado somente em ambiente de produção. Quando colocamos a aplicação no ar, os servidores são muito otimizados (muita performance e pouco espaço em disco) -> SSD (10gb, 20gb), então não salvamos imagens (entre outros) na nossa aplicação. 
+O node tem uma facilidade muito grande quando precisamos escalar nossa aplicação.
+
+Escala vertical -> Aumenta os recursos (memória, processamento).
+Escala horizontal -> Cria um novo servidor (distribuição de carga).
+
+e para isso utilizamos um CDN. 
+
+
