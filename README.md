@@ -88,6 +88,19 @@ O node tem uma facilidade muito grande quando precisamos escalar nossa aplicaç�
 Escala vertical -> Aumenta os recursos (memória, processamento).
 Escala horizontal -> Cria um novo servidor (distribuição de carga).
 
-e para isso utilizamos um CDN. 
+e para isso utilizamos um CDN.
+
+
+- Redis
+
+uma unica grande tabela contendo chave e valor
+
+{
+  "appointmensts-list-PROVIDER_ID-05-10-2020"
+}
+
+iremos configurar o cache provider da nossa aplicação. Isso vai permitir que a aplicação faça queries no banco postgres apenas quando os dados dentro de uma determinada tabela mudarem, e quando isso não acontecer é o redis quem irá nos prover os dados. Isso porque ele é mais rápido que o postgres e evita que nossa aplicação perca tempo fazendo queries desnecessárias.
+
+
 
 
