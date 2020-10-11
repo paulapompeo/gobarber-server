@@ -102,5 +102,11 @@ uma unica grande tabela contendo chave e valor
 iremos configurar o cache provider da nossa aplicação. Isso vai permitir que a aplicação faça queries no banco postgres apenas quando os dados dentro de uma determinada tabela mudarem, e quando isso não acontecer é o redis quem irá nos prover os dados. Isso porque ele é mais rápido que o postgres e evita que nossa aplicação perca tempo fazendo queries desnecessárias.
 
 
+# Brute Force
+
+instalar na nossa aplicação uma ferramenta que vai nos ajudar evitar um dos principais tipos de ataques a servidores: o DDoS.
+
+O que essa ferramenta faz é salvar num banco de dados predefinido o IP de cada usuário que acessa a aplicação e, junto ao IP, salva também o timestamp em que o acesso ocorreu para assim, fazer a tratativa de negar ou não o acesso desse usuário e assim, prevenir um ataque.
+
 
 

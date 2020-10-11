@@ -9,12 +9,14 @@ import 'express-async-errors';
 import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
 import routes from './routes';
+import rateLimiter from '@shared/infra/http/middlewares/rateLimiter';
 
 import '@shared/infra/typeorm';
 import '@shared/container';
 
 const app = express();
 
+app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 //para mostrar a imagem (forma estatica)
